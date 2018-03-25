@@ -12,7 +12,7 @@
     $scope.buttonMessage = "Check If Too Much";
     $scope.inputColor = "MediumSeaGreen";
     $scope.inputFood = "";
-    $scope.message = "Please enter data first";
+    $scope.message = "";
 
     $scope.lunchCheckLive = function () {
       var foodLength = $scope.inputFood.split(",").length;
@@ -25,6 +25,9 @@
 
     $scope.lunchCheck = function () {
       var foodLength = $scope.inputFood.split(",").length;
+      if (foodLength === "") {
+        $scope.message = "Please enter data first";
+      }
       if (foodLength > 3) {
         $scope.message = "Too much!";
       } else {

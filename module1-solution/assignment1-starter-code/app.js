@@ -25,11 +25,12 @@
 
     $scope.lunchCheck = function () {
       var foodLength = $scope.inputFood.split(",").length;
-      console.log($scope.inputFood === "");
+
       if ($scope.inputFood === "") {
         $scope.message = "Please enter data first";
         return;
       }
+      
       if (foodLength > 3) {
         $scope.message = "Too much!";
       } else {
